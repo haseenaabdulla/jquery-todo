@@ -1,0 +1,49 @@
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Name of the to-do task
+          example: 'Buy Groceries '
+        description:
+          type: string
+          maxLength: 2000
+          description: The Details about the to-do
+          example: 'Go to the supermarket and buy essentials.'
+        status:
+          type: string
+          description: Indicates status of the task
+          default: todo
+          example: todo
+    GeneralError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: Something went wrong.
+    NotFoundError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: Requested item not found.
+    BadRequestError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: First name should not be empty.
